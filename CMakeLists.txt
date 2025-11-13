@@ -5,7 +5,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 GraphicalEffects)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Quick QuickControls2 Qml Qt5CompatGraphicalEffects)
 
 qt_standard_project_setup()
 
@@ -49,5 +49,9 @@ qt_add_qml_module(appRemoteDesktop
 )
 
 target_link_libraries(appRemoteDesktop
-    PRIVATE Qt6::Quick Qt6::QuickControls2 Qt6::GraphicalEffects
+    PRIVATE
+        Qt6::Quick
+        Qt6::QuickControls2
+        Qt6::Qml
+        Qt6::Qt5CompatGraphicalEffects
 )
